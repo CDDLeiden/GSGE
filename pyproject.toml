@@ -1,0 +1,102 @@
+[build-system]
+requires = ["setuptools>=80.9", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "GSGE"
+version = "1.0.0"
+description = "Group-SELFIES Graph Embeddings - Functional group aware molecular fragment tokenization and graph embeddings"
+readme = "readme.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Jasper Durinck", email = "jasper.j.durinck@gmail.com"},
+    {name = "Bola Khalil", email = "b.a.a.khalil@lacdr.leidenuniv.nl"}
+]
+maintainers = [
+    {name = "Bola Khalil", email = "b.a.a.khalil@lacdr.leidenuniv.nl"},
+]
+keywords = [
+    "molecular-embeddings",
+    "graph-neural-networks",
+    "selfies",
+    "molecular-fragments",
+    "cheminformatics",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "tqdm>=4.65.0",
+    "rdkit==2024.9.6",
+    "numpy<=2.3.0",
+    "Pillow>=9.0.0",
+    "torch>=2.0.0",
+    "torch_geometric>=2.3.0",
+    "joblib>=1.3.0",
+    "selfies>=2.1.0",
+    "group-selfies @ git+https://github.com/JasperDurinck/group-selfies.git",
+    "pyarrow>=14.0.0",
+    "pandas>=2.0.0",
+    "scikit-learn>=1.3.0",
+    "scipy>=1.11.0",
+    "matplotlib>=3.7.0",
+    "networkx>=3.0",
+    "seaborn>=0.12.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "pytest-xdist>=3.3.0",
+    "pytest-timeout>=2.1.0",
+]
+
+docs = [
+    "mkdocs>=1.6.0",
+    "mkdocs-material>=9.5.0",
+    "mkdocstrings[python]>=0.25.0",
+    "mkdocs-minify-plugin>=0.8.0",
+    "mkdocs-git-revision-date-localized-plugin>=1.2.0",
+    "mike>=2.1.0",
+    "black>=24.0.0",
+]
+viz = [
+    "fastcluster>=1.3.0",
+    "plotly>=5.14.0",
+    "seaborn>=0.12.0",
+    "matplotlib>=3.7.0",
+    "umap-learn>=0.5.0",
+]
+notebooks = [
+    "ipykernel",
+    "nbformat",
+    "ipywidgets",
+    "ipython",
+    "notebook",
+    "jupyterlab"
+]
+all = [
+    "GSGE[dev,docs,viz,notebooks]",
+]
+
+[project.scripts]
+GSGE_CLI = "GSGE.scripts.CLI:main"
+
+[project.urls]
+Homepage = "https://github.com/CDDLeiden/GSGE"
+Repository = "https://github.com/CDDLeiden/GSGE"
+Issues = "https://github.com/CDDLeiden/GSGE/issues"
+
+[tool.setuptools]
+packages = ["GSGE", "GSGE.graphs", "GSGE.graphs.fragment_graph", "GSGE.graphs.compound_graph", "GSGE.scripts"]
+

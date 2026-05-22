@@ -1,0 +1,3 @@
+# Mark tutorial notebooks as documentation so GitHub Linguist
+# reports the actual package language (Python) instead of Jupyter Notebook
+use_examples/**/*.ipynb linguist-documentation

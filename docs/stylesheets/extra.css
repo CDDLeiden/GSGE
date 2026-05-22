@@ -1,0 +1,135 @@
+/* Custom CSS for GSGE documentation */
+
+/* Improve code block styling */
+.highlight {
+    border-radius: 4px;
+    margin: 1em 0;
+}
+
+/* Better table styling */
+table {
+    width: 100%;
+    margin: 1em 0;
+    border-collapse: collapse;
+}
+
+table th {
+    background-color: var(--md-primary-fg-color--light);
+    color: var(--md-primary-bg-color);
+    font-weight: 600;
+    padding: 0.75em 1em;
+}
+
+table td {
+    padding: 0.5em 1em;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* Improve admonition styling */
+.admonition {
+    border-left: 4px solid var(--md-accent-fg-color);
+    margin: 1.5em 0;
+}
+
+/* Better spacing for lists */
+ul, ol {
+    margin: 1em 0;
+    padding-left: 2em;
+}
+
+li {
+    margin: 0.5em 0;
+}
+
+/* Code inline styling */
+code {
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    background-color: var(--md-code-bg-color);
+    font-size: 0.9em;
+}
+
+/* Improve section spacing */
+h2 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    border-bottom: 2px solid var(--md-default-fg-color--lightest);
+    padding-bottom: 0.3em;
+}
+
+h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+}
+
+/* API documentation improvements */
+.doc-heading {
+    font-weight: 600;
+    color: var(--md-primary-fg-color);
+}
+
+.doc-signature {
+    background-color: var(--md-code-bg-color);
+    padding: 1em;
+    border-radius: 4px;
+    margin: 1em 0;
+    overflow-x: auto;
+}
+
+/* Mermaid diagram improvements */
+.mermaid {
+    text-align: center;
+    margin: 2em 0;
+}
+
+/* Image captions */
+img + em {
+    display: block;
+    text-align: center;
+    font-style: italic;
+    color: var(--md-default-fg-color--light);
+    margin-top: 0.5em;
+}
+
+/* Better blockquote styling */
+blockquote {
+    border-left: 4px solid var(--md-accent-fg-color);
+    padding-left: 1em;
+    margin: 1em 0;
+    color: var(--md-default-fg-color--light);
+}
+
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+}
+
+/* Navigation improvements */
+.md-nav__link--active {
+    font-weight: 600;
+}
+
+/* Footer improvements */
+.md-footer-meta {
+    background-color: var(--md-default-bg-color);
+}
+
+/* Print styles */
+@media print {
+    .md-header,
+    .md-sidebar,
+    .md-footer {
+        display: none;
+    }
+
+    body {
+        font-size: 12pt;
+    }
+
+    code {
+        page-break-inside: avoid;
+    }
+}
